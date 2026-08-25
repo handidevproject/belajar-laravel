@@ -8,16 +8,10 @@
                         </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                                <a aria-current="page"
-                                    class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"
-                                    href="/">Home</a>
-                                <a class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
-                                    href="/blog">Blog</a>
-                                <a class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
-                                    href="/about">About</a>
-                                <a class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
-                                    href="/contact">Contact</a>
+                                <x-nav-link :current="request()->is('/')" href="/">Home</x-nav-link>
+                                <x-nav-link :current="request()->is('blog')" href="/blog">Blog</x-nav-link>
+                                <x-nav-link :current="request()->is('about')" href="/about">About</x-nav-link>
+                                <x-nav-link :current="request()->is('contact')" href="/contact">Contact</x-nav-link>
                             </div>
                         </div>
                     </div>
@@ -81,16 +75,10 @@
 
             <div class="md:hidden" id="mobile-menu" x-cloak x-show="mobileOpen" x-transition>
                 <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                    <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                    <a aria-current="page"
-                        class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white"
-                        href="/">Home</a>
-                    <a class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
-                        href="/blog">Blog</a>
-                    <a class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
-                        href="/about">About</a>
-                    <a class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"
-                        href="/contact">Contact</a>
+                    <x-nav-link :current="request()->is('/')" class = "block" href="/">Home</x-nav-link>
+                    <x-nav-link :current="request()->is('blog')" class = "block" href="/blog">Blog</x-nav-link>
+                    <x-nav-link :current="request()->is('about')" class = "block" href="/about">About</x-nav-link>
+                    <x-nav-link :ccurrent="request()->is('contact')" class = "block" href="/contact">Contact</x-nav-link>
                 </div>
                 <div class="border-t border-white/10 pb-3 pt-4">
                     <div class="flex items-center px-5">

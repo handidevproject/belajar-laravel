@@ -1,0 +1,2 @@
+Prompt Navlink
+php artisan make:component NavLink --view
