@@ -75,10 +75,10 @@
 
             <div class="md:hidden" id="mobile-menu" x-cloak x-show="mobileOpen" x-transition>
                 <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                    <x-nav-link :current="request()->is('/')" class = "block" href="/">Home</x-nav-link>
-                    <x-nav-link :current="request()->is('blog')" class = "block" href="/blog">Blog</x-nav-link>
-                    <x-nav-link :current="request()->is('about')" class = "block" href="/about">About</x-nav-link>
-                    <x-nav-link :ccurrent="request()->is('contact')" class = "block" href="/contact">Contact</x-nav-link>
+                    <x-nav-link :current="request()->is('/')" href="/">Home</x-nav-link>
+                    <x-nav-link :current="request()->is('blog')" href="/blog">Blog</x-nav-link>
+                    <x-nav-link :current="request()->is('about')" href="/about">About</x-nav-link>
+                    <x-nav-link :current="request()->is('contact')" href="/contact">Contact</x-nav-link>
                 </div>
                 <div class="border-t border-white/10 pb-3 pt-4">
                     <div class="flex items-center px-5">
