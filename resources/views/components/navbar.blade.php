@@ -9,7 +9,7 @@
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <x-nav-link :current="request()->is('/')" href="/">Home</x-nav-link>
-                                <x-nav-link :current="request()->is('blog')" href="/blog">Blog</x-nav-link>
+                                <x-nav-link :current="request()->is('posts')" href="/posts">Blog</x-nav-link>
                                 <x-nav-link :current="request()->is('about')" href="/about">About</x-nav-link>
                                 <x-nav-link :current="request()->is('contact')" href="/contact">Contact</x-nav-link>
                             </div>
@@ -76,7 +76,7 @@
             <div class="md:hidden" id="mobile-menu" x-cloak x-show="mobileOpen" x-transition>
                 <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                     <x-nav-link :current="request()->is('/')" href="/">Home</x-nav-link>
-                    <x-nav-link :current="request()->is('blog')" href="/blog">Blog</x-nav-link>
+                    <x-nav-link :current="request()->is('posts')" href="/posts">Blog</x-nav-link>
                     <x-nav-link :current="request()->is('about')" href="/about">About</x-nav-link>
                     <x-nav-link :current="request()->is('contact')" href="/contact">Contact</x-nav-link>
                 </div>

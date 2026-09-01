@@ -8,9 +8,24 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/blog', function () {
-    return view('blog', [
+Route::get('/posts', function () {
+    $posts = [
+        [
+            "title" => "Judul Artikel 1",
+            "author" => "Handika Dwiputra",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        ],
+        [
+            "title" => "Judul Post Kedua",
+            "slug" => "judul-post-kedua",
+            "author" => "Handika Dwiputra",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
+        ]
+    ];
+    ///dd($posts); /// Digunakan untuk menampilkan isi dari variabel $posts, dd = dump and die
+    return view('posts', [
         'title' => 'Blog Page',
+        'posts' =>  $posts
     ]);
 });
 
@@ -25,4 +40,3 @@ Route::get('/contact', function () {
         'title' => 'Contact Page',
     ]);
 });
-
