@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Arr;
+use App\Models\Post;
 
 
 Route::get('/', function () {
@@ -11,22 +11,8 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', function () {
-    $posts = [
-        [
-            "id" => 1,
-            "slug" => "judul-post-pertama",
-            "title" => "Judul Artikel 1",
-            "author" => "Handika Dwiputra",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
-        ],
-        [
-            "id" => 2,
-            "title" => "Judul Post Kedua",
-            "slug" => "judul-post-kedua",
-            "author" => "Handika Dwiputra",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
-        ]
-    ];
+    $posts = Post::all();
+
     ///dd($posts); /// Digunakan untuk menampilkan isi dari variabel $posts, dd = dump and die
     return view('posts', [
         'title' => 'Blog Page',
@@ -35,31 +21,8 @@ Route::get('/posts', function () {
 });
 
 Route::get('/posts/{slug}', function ($slug) {
-    $posts = [
-        [
-            "id" => 1,
-            "slug" => "judul-post-pertama",
-            "title" => "Judul Artikel 1",
-            "author" => "Handika Dwiputra",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
-        ],
-        [
-            "id" => 2,
-            "title" => "Judul Post Kedua",
-            "slug" => "judul-post-kedua",
-            "author" => "Handika Dwiputra",
-            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
-        ]
-    ];
 
-    $post = Arr::first($posts, function ($post) use ($slug) {
-        return $post['slug'] == $slug;
-    });
-
-
-    if (!$post) {
-        abort(404);
-    }
+    $post = Post::find($slug);
 
     return view('post', [
         'title' => 'Single Post',
