@@ -1,2 +1,9 @@
 Prompt Navlink
+
 php artisan make:component NavLink --view
+
+php artisan db:show
+
+php artisan migrate
+
+php artisan migrate:fresh
