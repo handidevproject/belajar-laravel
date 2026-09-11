@@ -5,4 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 
-class Post extends Model {}
+class Post extends Model 
+{
+    protected $table = 'blog_posts';
+    
+}
