@@ -1,7 +1,7 @@
 <x-layout :title="$title">
     {{-- @dd($posts); // Digunakan untuk menampilkan isi dari variabel $posts, dd = dump and die --}}
     @foreach ($posts as $post)
-        <a class="hover:underline" href="/posts/{{ $post['slug'] }}">
+        <a class="hover:underline" href="/posts/{{ $post['id'] }}">
             <article class="max-w-3xl border-b border-gray-300 py-8">
                 <h2 class="mb-1 text-3xl font-bold tracking-tight text-gray-900">{{ $post['title'] }}</h2>
                 <div class="text-base text-gray-500">
